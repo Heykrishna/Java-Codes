@@ -1,0 +1,32 @@
+
+import java.util.*;
+
+public class minClimbCost {
+
+    public static int mincost(int[] cost, int indx) {
+        if (indx == 0 || indx == 1) {
+            return cost[indx];
+        }
+        return cost[indx] + Math.min(mincost(cost, indx - 1), mincost(cost, indx - 2));
+    }
+
+    public static int mincostClimbing(int[] cost) {
+        int n = cost.length;
+        return Math.min(mincost(cost, n - 1), mincost(cost, n - 2));
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int s;
+        System.out.print("enter size :");
+        s = sc.nextInt();
+        int[] arr = new int[s];
+        for (int i = 0; i < s; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println(mincostClimbing(arr));
+    }
+
+}

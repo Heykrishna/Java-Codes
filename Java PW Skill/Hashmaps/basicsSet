@@ -1,0 +1,42 @@
+
+import java.util.*;
+
+class basicsSet {
+
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();     // interface 
+
+        // insert - TC O(1)
+        set.add(20);
+        set.add(100);
+        set.add(10);
+        set.add(-8);
+        set.add(200);
+
+        // printing - TC O(n)
+        System.out.println(set);
+
+        // search - true / false - TC O(1)
+        System.out.println(set.contains(100));
+        System.out.println(set.contains(50));
+
+        // size of set - TC O(1)
+        System.out.println("Size is " + set.size());
+
+        // remove - TC O(1)
+        set.remove(100);
+        System.out.println(set);
+        System.out.println("Size is " + set.size());
+
+        set.remove(45);    // not giving error 
+
+        // to Array 
+        Object[] arr = set.toArray();       // data type array ka object rkhna hai 
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+    }
+}

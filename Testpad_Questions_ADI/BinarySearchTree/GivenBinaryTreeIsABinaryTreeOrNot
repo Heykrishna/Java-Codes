@@ -1,0 +1,26 @@
+
+
+    
+class Result {
+    static Node prev = null; // Previous node in in-order traversal
+    static int isBinarySearchTree(Node root) {
+      prev = null;
+      return isBSTHelper(root) ? 1 : 0;
+    }
+    private static boolean isBSTHelper(Node node) {
+      if (node == null) {
+        return true; // Empty tree is BST
+      }
+      // Check left subtree
+      if (!isBSTHelper(node.left)) {
+        return false;
+      }
+      // Check current node
+      if (prev != null && node.data <= prev.data) {
+        return false; // Not in ascending order
+      }
+      prev = node; // Update previous node
+      // Check right subtree
+      return isBSTHelper(node.right);
+    }
+  }

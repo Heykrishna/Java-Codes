@@ -1,0 +1,23 @@
+
+
+class Result {
+  static int maxFrequency(int A[], int n) {
+    int maxFreq = 0;
+    int res = Integer.MAX_VALUE;
+    int[] freq = new int[1001]; // Since 0 <= A[i] <= 1000
+    // Count frequency of each number
+    for (int num : A) {
+      freq[num]++;
+    }
+    // Find number with highest frequency
+    for (int i = 0; i <= 1000; i++) {
+      if (freq[i] > maxFreq) {
+        maxFreq = freq[i];
+        res = i;
+      } else if (freq[i] == maxFreq && i < res) {
+        res = i; // Update result if smaller number has same frequency
+      }
+    }
+    return res;
+  }
+}

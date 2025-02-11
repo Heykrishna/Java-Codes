@@ -1,0 +1,30 @@
+
+
+class Result
+{
+  static int isArrayDivisibleInPairs(int a[], int n, int k){
+    int[] remainder = new int[k];
+    // Count remainder of each element when divided by k
+    for (int i = 0; i < n; i++) {
+      int rem = a[i] % k;
+      remainder[rem]++;
+    }
+    // Check if pairs can be formed with sums divisible by k
+    for (int i = 1; i <= k / 2; i++) {
+      if (remainder[i] != remainder[k - i]) {
+        return 0; // Pairs cannot be formed
+      }
+    }
+    // Check if remainder 0 has even count
+    if (remainder[0] % 2 != 0) {
+      return 0; // Pairs cannot be formed
+    }
+    // If k is even, check if remainder k/2 has even count
+    if (k % 2 == 0) {
+      if (remainder[k / 2] % 2 != 0) {
+        return 0; // Pairs cannot be formed
+      }
+    }
+    return 1; // Pairs can be formed
+  }
+}

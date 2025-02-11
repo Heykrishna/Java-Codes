@@ -1,0 +1,29 @@
+
+public class consOver2 {
+    
+    int salary;
+    String empName;
+
+    // No argument constructor
+    consOver2() {
+        System.out.println("User defined constructor");
+    }
+
+    // Parameterized constructor
+    consOver2(int salary, String empName) {
+        this.salary = salary;
+        this.empName = empName;
+    }
+
+
+    public static void main(String[] args) {
+        
+        consOver2 c = new consOver2();
+
+        consOver2 c1 = new consOver2(20000, "Krishna");
+
+
+        System.out.println(c1.salary + " " + c1.empName);
+
+    }
+}

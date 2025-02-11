@@ -1,0 +1,44 @@
+
+
+
+import java.util.Scanner;
+
+class Main{
+      public static int rotationCount(int[] array, int size) {
+        if (isSorted(array, size)) {
+            return -1; // Array is not rotated
+        }
+        int minIndex = findMinIndex(array, size);
+        return minIndex;
+    }
+      public static boolean isSorted(int[] array, int size) {
+        for (int i = 0; i < size - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+      public static int findMinIndex(int[] array, int size) {
+        int minIndex = 0;
+        for (int i = 1; i < size; i++) {
+            if (array[i] < array[minIndex]) {
+                minIndex = i;
+            }
+        }
+        return minIndex;
+    }
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int testCases = scanner.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            int size = scanner.nextInt();
+            int[] array = new int[size];
+            for (int j = 0; j < size; j++) {
+                array[j] = scanner.nextInt();
+            }
+            System.out.println(rotationCount(array, size));
+        }
+    }
+}

@@ -1,0 +1,22 @@
+
+
+class Result{
+  
+  static String inspectStrings(String[] words) {
+    Map<String, Integer> freqMap = new HashMap<>();
+    int maxCount = 0;
+    String winner = "";
+    // Count occurrences of each string
+    for (int i = 0; i < words.length; i++) {
+      String word = words[i];
+      int count = freqMap.getOrDefault(word, 0) + 1;
+      freqMap.put(word, count);
+      // Update winner if count increases or equals maxCount
+      if (count > maxCount || (count == maxCount && word.compareTo(winner) > 0)) {
+        maxCount = count;
+        winner = word;
+      }
+    }
+    return winner;
+  }
+}

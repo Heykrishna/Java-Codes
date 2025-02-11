@@ -1,0 +1,51 @@
+// merge an array of size m into an array of size m + n
+
+
+import java.util.*;
+
+public class MergeOneArrayIntoAnotherOfBiggerSize {
+
+    public static void mergeArrays(int[] arr1, int[] arr2){
+        int[] mergedArray = new int[arr1.length + arr2.length];
+
+        System.arraycopy(arr1, 0, mergedArray, 0, arr1.length);
+        // The System.arraycopy() method is used to copy elements from arr1 to mergedArray.
+        // arr1 is the source array.
+        // 0 is the starting index in the source array.
+        // mergedArray is the destination array.
+        // 0 is the starting index in the destination array.
+        // arr1.length is the number of elements to copy.
+
+        System.arraycopy(arr2, 0, mergedArray, arr1.length, arr2.length);
+
+        // Printing the merged array
+        for(int i=0; i<mergedArray.length; i++){
+            System.out.print(mergedArray[i] + " ");
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int m = sc.nextInt();
+
+        int[] arr1 = new int[m];
+
+        for(int i=0; i<m; i++){
+            arr1[i] = sc.nextInt();
+        }
+
+        int n = sc.nextInt();
+
+        int[] arr2 = new int[n];
+
+        for(int i=0; i<n; i++){
+            arr2[i] = sc.nextInt();
+        }
+
+        mergeArrays(arr1, arr2);
+
+    }
+}

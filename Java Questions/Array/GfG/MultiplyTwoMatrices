@@ -1,0 +1,33 @@
+
+
+import java.util.*;
+
+public class MultiplyTwoMatrices {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int rowInA =  sc.nextInt();
+        int colInA =  sc.nextInt();
+        int rowInB =  sc.nextInt();
+        int colInB =  sc.nextInt();
+
+        // Check if matrices can be multilplied 
+
+        if(colInA != rowInB){
+            System.out.println("Matrices cannot be mutiplied");
+            return;
+        }
+
+        int[][] matrixA = new int[rowInA][colInA];
+        int[][] matrixB = new int[rowInB][colInB];
+        
+        for(int i=0; i<rowInA; i++){
+            for(int j=0; j<colInB; j++){
+                matrixA[i][j] = sc.nextInt();
+            }
+        }
+
+        
+
+    }
+}

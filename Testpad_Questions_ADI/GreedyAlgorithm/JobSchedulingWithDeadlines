@@ -1,0 +1,38 @@
+
+
+class Result {
+    static class Job implements Comparable<Job> {
+      int deadline, profit;
+      Job(int deadline, int profit) {
+        this.deadline = deadline;
+        this.profit = profit;
+      }
+      public int compareTo(Job other) {
+        return other.profit - profit; // Sort by profit in descending order
+      }
+    }
+    static int jobScheduling(int[] deadlines, int[] profits) {
+      int n = deadlines.length;
+      Job[] jobs = new Job[n];
+      // Create Job objects
+      for (int i = 0; i < n; i++) {
+        jobs[i] = new Job(deadlines[i], profits[i]);
+      }
+      // Sort jobs based on profit
+      Arrays.sort(jobs);
+      int maxProfit = 0;
+      boolean[] slots = new boolean[100]; // Assuming max deadline is 100
+      // Iterate through sorted jobs
+      for (Job job : jobs) {
+        // Find a slot to schedule the job
+        for (int i = job.deadline; i > 0; i--) {
+          if (!slots[i]) {
+            slots[i] = true;
+            maxProfit += job.profit;
+            break;
+          }
+        }
+      }
+      return maxProfit;
+    }
+  }

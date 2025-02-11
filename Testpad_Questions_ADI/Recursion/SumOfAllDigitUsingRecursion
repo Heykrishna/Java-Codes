@@ -1,0 +1,26 @@
+
+
+import java.util.Scanner;
+class Main {
+    static int sumOfDigits(int n) {
+
+        int sum = 0;
+        int sign = (n >= 0) ? 1 : -1; // Store sign
+        n = Math.abs(n); // Take absolute value
+        while (n > 0) {
+            sum += n % 10; // Add last digit
+            n /= 10;      // Remove last digit
+        }
+        return sum * sign;    // Return with original sign
+
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while (t-- > 0) {
+            int num = scanner.nextInt();
+            System.out.println(sumOfDigits(num));
+        }
+        scanner.close();
+    }
+}

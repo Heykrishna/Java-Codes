@@ -1,0 +1,44 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int vertices = scanner.nextInt();
+        int edges = scanner.nextInt();
+
+        List<List<Integer>> graph = new ArrayList<>();
+        for (int i = 0; i < vertices; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < edges; i++) {
+            int u = scanner.nextInt();
+            int v = scanner.nextInt();
+            graph.get(u).add(v);
+        }
+
+        int source = scanner.nextInt();
+        int destination = scanner.nextInt();
+
+        boolean[] visited = new boolean[vertices];
+        if (dfs(graph, source, destination, visited)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+    static boolean dfs(List<List<Integer>> graph, int current, int destination, boolean[] visited) {
+        if (current == destination) {
+            return true;
+        }
+        visited[current] = true;
+        for (int neighbor : graph.get(current)) {
+            if (!visited[neighbor]) {
+                if (dfs(graph, neighbor, destination, visited)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}

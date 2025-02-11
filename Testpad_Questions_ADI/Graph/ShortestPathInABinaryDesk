@@ -1,0 +1,42 @@
+class Result {    
+    static int shortestPath(int mat[][], int srcR, int srcC, int destR, int destC, int m, int n){
+
+    if (srcR < 0 || srcR >= m || srcC < 0 || srcC >= n || destR < 0 || destR >= m || destC < 0 || destC >= n) {
+      return -1;
+    }
+
+    if (mat[srcR][srcC] == 0 || mat[destR][destC] == 0) {
+      return -1;
+    }
+
+    int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    Queue<int[]> queue = new LinkedList<>();
+    queue.add(new int[] {srcR, srcC, 0});
+
+    mat[srcR][srcC] = 0;
+    while (!queue.isEmpty()) {
+      int[] current = queue.poll();
+      int row = current[0];
+      int col = current[1];
+      int distance = current[2];
+
+      if (row == destR && col == destC) {
+        return distance;
+      }
+
+      for (int[] direction : directions) {
+        int newRow = row + direction[0];
+        int newCol = col + direction[1];
+
+        if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n && mat[newRow][newCol] == 1) {
+
+          mat[newRow][newCol] = 0;
+          queue.add(new int[] {newRow, newCol, distance + 1});
+        }
+      }
+    }
+
+    return -1;
+    }
+}

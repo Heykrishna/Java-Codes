@@ -1,0 +1,29 @@
+import java.util.HashMap;
+
+public class mapBasic {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+
+        // put - TC O(1)
+        map.put("Raghav", 76);
+        map.put("Himanshu", 34);
+        map.put("Shivam", 56);
+        map.put("Ayushi", 32);
+        map.put("Prachi", 12);
+        
+        // unique keys, values repeat ho skti hai 
+        map.put("Raghav", 67);      // this will replace first value 
+
+        System.out.println(map);
+        System.out.println(map.size());
+
+        // contains
+        System.out.println(map.containsKey("Raghav"));
+        System.out.println(map.containsValue(34));
+
+        map.remove("Raghav");
+
+        // get 
+        System.out.println(map.get("Himanshu"));
+    }
+}

@@ -1,0 +1,102 @@
+// Jagged array 
+
+public class Test{
+
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+
+        int rows = sc.nextInt();
+        int a[][] = new int[rows][];
+
+        for(int i = 0; i<a.length; i++){
+            int columns = sc.nextInt();
+            a[i] = new int[columns];
+        }
+
+        for(int i=0; i<a.length; i++){
+            for(int j=0; j<a.length; j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        // printing
+        for(int i=0; i<a.length; i++){
+            for(int j=0; j<a.length; j++){
+                System.out.print(a[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Type casting 
+
+// Implicit typecasting
+public class Demo {
+
+    public static void main(String[] args) {
+        byte b = 10; 
+        int a = b;
+        System.out.println(a);
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// String literals 
+
+public class Demo {
+
+    public static void main(String[] args) {
+        String s1 = "deepak";       // string literals without using new keyword 
+        s1.concat("gupta");
+        s1 = s1.concat("gupta");
+    }
+}
+
+// usign new keyword
+
+public class Demo {
+
+    public static void main(String[] args) {
+        String s1 = new Sring("deepak");
+        s1.concat("gupta");
+        s1 = s1.concat("gupta");
+        System.out.println(s1);
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+// String class methods 
+
+public class Demo {
+
+    public static void main(String[] args) {
+        String s1 = "deepak";
+        Strign s2 = new String("deepak");
+
+        boolean b = s1.equals(s2);
+        System.out.println(b);
+    }
+}
+
+//  true 
+
+public class Demo {
+
+    public static void main(String[] args) {
+        String s1 = "deepak";
+        Strign s2 = new String("deepak");
+
+        boolean b = s1 == s2;
+        System.out.println(b);
+    }
+}
+
+

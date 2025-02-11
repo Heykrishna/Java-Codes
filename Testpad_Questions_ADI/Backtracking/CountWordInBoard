@@ -1,0 +1,48 @@
+
+
+class Result {
+    static int countWord(char[][] board, String word, int m, int n) {
+        int count = 0;
+        // Define directions for adjacent cells
+        int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        // Perform DFS for each cell
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                // Check if cell matches first character of word
+                if (board[i][j] == word.charAt(0)) {
+                    // Mark visited cells
+                    boolean[][] visited = new boolean[m][n];
+                    visited[i][j] = true;
+                    // Recur for remaining characters
+                    count += dfs(board, word, 1, i, j, directions, visited);
+                }
+            }
+        }
+        return count;
+    }
+    static int dfs(char[][] board, String word, int index, int row, int col, int[][] directions, boolean[][] visited) {
+        // Base case: Word found
+        if (index == word.length()) {
+            return 1;
+        }
+        int count = 0;
+        int m = board.length;
+        int n = board[0].length;
+        // Explore adjacent cells
+        for (int[] dir : directions) {
+            int newRow = row + dir[0];
+            int newCol = col + dir[1];
+            // Check bounds and visited status
+            if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n && !visited[newRow][newCol]) {
+                // Check if cell matches current character
+                if (board[newRow][newCol] == word.charAt(index)) {
+                    visited[newRow][newCol] = true;
+                    // Recur for next character
+                    count += dfs(board, word, index + 1, newRow, newCol, directions, visited);
+                    visited[newRow][newCol] = false; // Backtrack
+                }
+            }
+        }
+        return count;
+    }
+}

@@ -1,0 +1,44 @@
+
+
+
+class Result {
+    static Node buildSearchTree(int t[], int n) {
+      if (n == 0) {
+        return null;
+      }
+      Node root = new Node(t[0]);
+      for (int i = 1; i < n; i++) {
+        insertNode(root, t[i]);
+      }
+      return root;
+    }
+    private static void insertNode(Node root, int data) {
+      if (data < root.data) {
+        if (root.leftChild == null) {
+          root.leftChild = new Node(data);
+        } else {
+          insertNode(root.leftChild, data);
+        }
+      } else {
+        if (root.rightChild == null) {
+          root.rightChild = new Node(data);
+        } else {
+          insertNode(root.rightChild, data);
+        }
+      }
+    }
+    // In-order traversal for printing the tree
+    public static void printInOrder(Node root) {
+      if (root != null) {
+        printInOrder(root.leftChild);
+        System.out.print(root.data + " ");
+        printInOrder(root.rightChild);
+      }
+    }
+    public static void main(String[] args) {
+      int[] t = {4, 2, 7, 1, 3, 5, 8};
+      int n = t.length;
+      Node root = buildSearchTree(t, n);
+      printInOrder(root);
+    }
+  }

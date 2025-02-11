@@ -1,0 +1,36 @@
+
+
+
+class Result {
+    private static final String[] ones = {
+      "", "one", "two", "three", "four", "five", "six", "seven",
+      "eight", "nine", "ten", "eleven", "twelve", "thirteen",
+      "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+    };
+    private static final String[] tens = {
+      "", "", "twenty", "thirty", "forty", "fifty", "sixty",
+      "seventy", "eighty", "ninety"
+    };
+    static void intToWord(int n) {
+      if (n == 0) {
+        System.out.print("zero");
+        return;
+      }
+      String result = convert(n);
+      System.out.print(result.trim());
+    }
+    static String convert(int num) {
+      if (num < 20) {
+        return ones[num];
+      } else if (num < 100) {
+        return tens[num / 10] + (num % 10 != 0 ? " " + ones[num % 10] : "");
+      } else if (num < 1000) {
+        return ones[num / 100] + " hundred" + (num % 100 != 0 ? " " + convert(num % 100) : "");
+      } else if (num < 100000) {
+        return convert(num / 1000) + " thousand" + (num % 1000 != 0 ? " " + convert(num % 1000) : "");
+      } else if (num <= 999999) {
+        return convert(num / 100000) + " lakhs" + (num % 100000 != 0 ? " " + convert(num % 100000) : "");
+      }
+      return "";
+    }
+  }

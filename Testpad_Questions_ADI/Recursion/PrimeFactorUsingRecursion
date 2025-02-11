@@ -1,0 +1,56 @@
+
+import java.util.Scanner;
+
+class Main{
+    public static void primeFactors(int n, int divisor) {
+        if (n == 1) {
+            return;
+        }
+
+        if (n % divisor == 0) {
+            System.out.println(divisor);
+            primeFactors(n / divisor, divisor);  // Recursively factor the quotient
+        } else {
+            // If not divisible, try the next divisor
+            primeFactors(n, divisor + 1);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();  // Read the input number (n >= 2)
+        sc.close();
+        // Call the recursive function starting with divisor 2
+        primeFactors(number, 2);
+    }
+}
+
+
+
+
+import java.util.Scanner;
+
+class Main{
+    public static void primeFactor(int n, int divisor){
+        
+        if(n==1){
+            return;
+        }
+        if(n%divisor == 0){
+            System.out.println(divisor);
+            primeFactor(n / divisor, divisor);   
+        }
+        else{
+            primeFactor(n, divisor + 1);
+        }
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        primeFactor(n, 2);
+    }
+}
+
+
+
+

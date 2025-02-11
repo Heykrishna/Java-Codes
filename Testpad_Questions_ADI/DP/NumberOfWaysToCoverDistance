@@ -1,0 +1,25 @@
+
+public class NumberOfWaysToCoverDistance {
+
+    static int totalWaysToDistance(int d,  int k ){
+        
+        int[] ways = new int[d+1];
+
+        ways[0] = 1;
+
+        for(int i=1; i<=d; i++){
+            for(int j=1; j<=Math.min(i, k); j++){
+                ways[i] += ways[i-j];
+            }
+        }
+        return ways[d];
+    }
+    
+}
+
+
+
+
+
+
+

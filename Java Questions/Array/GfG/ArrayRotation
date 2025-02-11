@@ -1,0 +1,133 @@
+// Using a temperory variable 
+
+// import java.util.*;
+
+// public class ArrayRotation {
+
+//    public static void rotateArray(int[] arr, int rotation){
+//     int[] temp = new int[arr.length];
+    
+//     for(int i : arr){
+//         temp[]
+//     }
+//     System.arraycopy(temp, 0, arr, 0, arr.length);
+
+//    }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int size = sc.nextInt();
+//         int[] arr = new int[size];
+
+//         for(int i=0; i<size; i++){
+//             arr[i] = sc.nextInt();
+//         }
+
+//         int rotation = sc.nextInt();
+
+//         rotateArray(arr, rotation);
+
+//         for(int i : arr){
+//             System.out.print(i + " ");
+//         }
+//     }
+// }
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+// Using a loop 
+
+// import java.util.*;
+
+// public class ArrayRotation {
+
+//     public static void rotateArray(int[] arr, int rotation){
+//         for(int i=0 ; i<rotation; i++){
+//             int temp = arr[0];
+//             for(int j=1; j<arr.length; j++){
+//                 arr[j - 1] = arr[j];
+//             }
+//             arr[arr.length - 1] = temp;
+//         }
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int size = sc.nextInt();
+
+//         int arr[] = new int[size];
+
+//         for(int i : arr){
+//             arr[i] = sc.nextInt();
+//         }
+
+//         int rotation = sc.nextInt();
+
+//         rotateArray(arr, rotation);
+
+//         for(int i : arr){
+//             System.out.print(i + " ");
+//         }
+
+//     }
+
+// }
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+// 3 
+
+import java.util.Scanner;
+
+public class ArrayRotation {
+
+    public static void rotateArray(int[] arr, int rotation){
+        int n = arr.length;
+        rotation = rotation % n;   // handles cases where rotation > n
+
+        int[] temp = new int[rotation];
+
+        // copy the last 'rotations' elements to the temp array
+        for(int i = 0; i < rotation; i++){
+            temp[i] = arr[n - rotation + 1];
+        }
+
+        // shift the rest of the array to the right 
+        for(int i = n - 1; i>= rotation; i--){
+            arr[i] = arr[i - rotation];
+        }
+
+        // copy the temp array back to the beginning of the original array
+        for(int i=0; i<rotation; i++){
+            arr[i] = temp[i];
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        for(int i : arr){
+            arr[i] = sc.nextInt();
+        }
+
+        int rotation = sc.nextInt();
+
+        rotateArray(arr, rotation);
+
+        for(int i : arr){
+            System.out.print(i +  " ");
+        }
+    }
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////
+

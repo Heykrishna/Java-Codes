@@ -1,0 +1,62 @@
+
+
+class Result {
+  public static final int N = 9;
+  public static boolean isSafe(int[][] mat,int row,int col,int num){
+    for(int i=0;i<N;i++){
+      if(mat[i][col]==num){
+        return false;
+      }
+    }
+      for(int j=0;j<N;j++){
+      if(mat[row][j]==num){
+        return false;
+      }
+    }
+    int srow = (row/3)*3;
+    int scol = (col/3)*3;
+    for(int i=srow;i<srow+3;i++){
+      for(int j=scol;j<scol+3;j++){
+        if(mat[i][j]==num){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  public static boolean solve(int[][] mat,int row,int col){
+    if(row == N){
+      return true;
+    }
+    else if(mat[row][col]!=0){
+      if(col!=N-1){
+        return solve(mat,row,col+1);
+      }
+      else{
+        return solve(mat,row+1,0);
+      }
+    }
+    else{
+      for(int num =1;num<=N;num++){
+        if(isSafe(mat,row,col,num)){
+          mat[row][col]=num;
+          if(col!=N-1){
+            if(solve(mat,row,col+1))return true;
+          }
+          else{
+            if(solve(mat,row+1,0))return true;
+          }
+          mat[row][col]=0;
+        }
+      }
+    }
+    return false;
+  }
+  static int solveSudoku(int mat[][])
+  {
+    if(solve(mat,0,0)){
+      return 1;
+    }
+    return -1;
+  }
+}

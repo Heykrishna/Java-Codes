@@ -1,0 +1,19 @@
+
+
+
+class Result {
+    static int lowestCommonAncestor(Node root, int k1, int k2) {
+      // If both k1 and k2 are less than root, move left
+      if (k1 < root.data && k2 < root.data) {
+        return lowestCommonAncestor(root.left, k1, k2);
+      }
+      // If both k1 and k2 are greater than root, move right
+      else if (k1 > root.data && k2 > root.data) {
+        return lowestCommonAncestor(root.right, k1, k2);
+      }
+      // Otherwise, root is the LCA
+      else {
+        return root.data;
+      }
+    }
+  }

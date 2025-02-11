@@ -1,0 +1,28 @@
+public class copyCons {
+
+     int stuId;
+     String stuName;
+
+     copyCons(){
+        stuId = 1;
+        stuName = "Krishna";
+
+        System.out.println(stuId);
+        System.out.println(stuName);
+     }
+
+     copyCons(copyCons obj){
+        stuId = obj.stuId;
+        stuName = obj.stuName;
+
+        System.out.println(stuId);
+        System.out.println(stuName);
+     }
+
+    public static void main(String[] args) {
+
+        copyCons d = new copyCons();
+        copyCons d1 = new copyCons(d);
+
+    }
+}

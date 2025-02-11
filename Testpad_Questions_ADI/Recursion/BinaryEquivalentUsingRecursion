@@ -1,0 +1,26 @@
+
+
+class Result{ 
+    static int decimalToBinary(int n){ 
+         if (n == 0) {
+            return 0;
+        }
+        // Recursive case: get the last binary digit (0 or 1)
+        int lastBinaryDigit = n % 2;
+        // Get the remaining binary digits
+        int remainingBinary = decimalToBinary(n / 2);
+        // Combine the remaining binary digits with the last binary digit
+        return remainingBinary * 10 + lastBinaryDigit;
+    } 
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+class Result { 
+    static int decimalToBinary(int n) { 
+        return Integer.parseInt(Integer.toBinaryString(n)); 
+    } 
+}

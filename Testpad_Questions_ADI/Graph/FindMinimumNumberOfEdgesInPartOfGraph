@@ -1,0 +1,85 @@
+
+class Result{
+  static int number_of_edges(int n){
+
+    int edges = 0;
+    while (n > 1) {
+      if (n % 3 == 0) {
+        n /= 3;
+        edges++;
+      } else {
+        n--;
+        edges++;
+      }
+    }
+    return edges;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Result{
+  static int number_of_edges(int n){
+
+   int edges = 0;
+
+    while(n > 1){
+        if(n%3 == 0){
+            n /= 3;
+            edges++;
+        }
+        else {
+            n--;
+            edges++;
+        }
+    }
+    return edges;
+
+  }
+}
+
+
+
+class Result{
+  static int number_of_edges(int n){
+
+   int edges = 0;
+
+   while(n>1){
+    if(n % 3 == 0 ){
+        n /= 0;
+        edges++;
+    }
+    else{
+        n--;
+        edges++;
+    }
+    return edges;
+   }
+
+  }
+}
+
+
+
+
+

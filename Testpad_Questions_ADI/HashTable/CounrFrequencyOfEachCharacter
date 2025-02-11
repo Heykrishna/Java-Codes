@@ -1,0 +1,21 @@
+
+
+class Result {
+  static void countFrequency(String str) {
+    int[] freq = new int[26]; // Frequency array for 'a' to 'z'
+    boolean[] printed = new boolean[26]; // Track printed characters
+    // Count frequency 
+    for (char c : str.toCharArray()) {
+      int index = c - 'a'; // Convert char to index (0-25)
+      freq[index]++;
+    }
+    // Print characters in order of occurrence with frequency
+    for (char c : str.toCharArray()) {
+      int index = c - 'a'; 
+      if (!printed[index]) {
+        System.out.print(c + "" + freq[index] + " ");
+        printed[index] = true;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+
+
+class Result
+{
+    static int matrixChainMultiplication(int p[], int n){
+        
+      int[][] dp = new int[n][n];
+      
+      for(int chainLength=2 ; chainLength<=n ; chainLength++){
+          for(int i=0; i<n-chainLength+1 ; i++){
+              int j = i+chainLength-1;
+              dp[i][j] = Integer.MAX_VALUE;
+
+              for(int k=i;k<j;k++){
+                  int q = dp[i][k] + dp[k+1][j] + p[i] * p[k+1] * p[j+1];
+                  dp[i][j] = Math.min(dp[i][j],q);
+              }
+          }
+      }
+      return dp[0][n-1];
+  }
+}
+

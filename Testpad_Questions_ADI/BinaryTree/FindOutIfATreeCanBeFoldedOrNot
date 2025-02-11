@@ -1,0 +1,29 @@
+
+
+
+/* 
+ *  class Node {
+ *    int data;
+ *    Node left; 
+ *    Node right;
+ *    public Node() {
+ *      data = 0;
+ *    }
+ *    public Node(int d)  {
+ *      data = d;
+ *    }
+ *  }
+ *
+ *  The above class defines a tree node.
+ */
+class Result {
+    public static int isFoldable(Node root) {
+        if (root == null) return 1; // An empty tree is foldable
+        return isMirror(root.left, root.right) ? 1 : 0;
+    }
+    private static boolean isMirror(Node a, Node b) {
+        if (a == null && b == null) return true;
+        if (a == null || b == null) return false;
+        return isMirror(a.left, b.right) && isMirror(a.right, b.left);
+    }
+}

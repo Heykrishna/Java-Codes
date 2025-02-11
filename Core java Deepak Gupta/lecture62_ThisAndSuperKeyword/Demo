@@ -1,0 +1,37 @@
+// public class Demo {
+    
+//     class parent {
+
+//         void Data(){
+//             int a = 10;
+//             int b = 20;
+//             System.out.println(a + " " + b);
+
+//         }
+//     }
+
+//     class child extends parent {
+
+//         void Result(){
+//             this.data();
+//         }
+
+//         void Data(){
+//             int a = 30;
+//             int b = 40;
+//             System.out.println(a + " " + b);
+//         }
+//     }
+
+
+
+//     public static void main(String[] args) {
+//         child ch = new child();
+
+//         ch Result
+//     }
+
+// }
+
+
+

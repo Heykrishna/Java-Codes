@@ -1,0 +1,76 @@
+
+
+void BFS(int v) {
+
+    boolean[] visited = new boolean[V];
+
+    Queue<Integer> queue = new LinkedList<>();
+
+    queue.add(v);
+    visited[v] = true;
+    while (!queue.isEmpty()) {
+
+      v = queue.poll();
+      System.out.print(v + " ");
+      
+      for (int adj : adjVertices.get(v)) {
+        if (!visited[adj]) {
+          queue.add(adj);
+          visited[adj] = true;
+        }
+      }
+    }
+}
+
+
+
+
+
+void BFS(int v) {
+
+    boolean[] visited = new boolean[V];
+
+    Queue<Integer> queue = new LinkedList<>();
+
+    queue.add(v);
+    visited[v] = true;
+    while (!queue.isEmpty()) {
+
+      v = queue.poll();
+      System.out.print(v + " ");
+
+      for (int adj : adjVertices.get(v)) {
+        if (!visited[adj]) {
+          queue.add(adj);
+          visited[adj] = true;
+        }
+      }
+    }
+}
+
+
+
+
+
+
+void BFS(int v) {
+
+    boolean[] visited = new boolean[V];
+
+    Queue<Integer> queue = new LinkedList<>();
+
+    queue.add(v);
+    visited[v] = true;
+    while (!queue.isEmpty()) {
+
+      v = queue.poll();
+      System.out.print(v + " ");
+
+      for (int adj : adjVertices.get(v)) {
+        if (!visited[adj]) {
+          queue.add(adj);
+          visited[adj] = true;
+        }
+      }
+    }
+}

@@ -1,0 +1,16 @@
+
+
+class Result {
+    static int countWords(String str) {
+        // Remove leading and trailing spaces
+        str = str.trim();
+        // If string is empty, return 0
+        if (str.isEmpty()) {
+            return 0;
+        }
+        // Split string into words by one or more spaces
+        String[] words = str.split("\\s+");
+        // Return the number of words
+        return words.length;
+    }
+}

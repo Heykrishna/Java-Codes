@@ -1,0 +1,25 @@
+
+
+
+static int totalPaths = 0;
+static void printAllPaths(Node root) {
+  if (root == null) {
+    return; // do nothing if the tree is empty
+  }
+  printAllPathsUtil(root, "", 0);
+  System.out.println(totalPaths);
+}
+static void printAllPathsUtil(Node node, String path, int length) {
+  if (node == null) {
+    return;
+  }
+  path += node.data + " ";
+  length++;
+  if (node.left == null && node.right == null) {
+    System.out.println(path.trim() + " " + (length - 1));
+    totalPaths++;
+  } else {
+    printAllPathsUtil(node.left, path, length);
+    printAllPathsUtil(node.right, path, length);
+  }
+}

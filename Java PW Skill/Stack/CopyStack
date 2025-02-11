@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class CopyStack {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Stack<Integer> st = new Stack<>();
+        st.push(1);
+        st.push(2);
+        st.push(3);
+        st.push(4);
+        st.push(5);
+
+        System.out.println(st);
+
+        //reverse 
+        Stack<Integer> re = new Stack<>();
+
+        while(st.size()>0){
+            re.push(st.pop());
+        }
+
+        Stack<Integer> ns = new Stack<>();
+
+        while(re.size()>0){
+            ns.push(re.pop());
+        }
+
+        System.out.println(ns);
+    }
+}

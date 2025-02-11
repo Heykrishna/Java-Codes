@@ -1,0 +1,50 @@
+import java.util.*;
+
+public class calculator {
+    
+    char op;
+    double a, b, res = 0;
+
+    void cal(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter operator (+,-,*,/)");
+        op = sc.next().charAt(0);
+        System.out.println("Enter two values ");
+        a = sc.nextDouble();
+        b = sc.nextDouble();
+
+        switch (op) {
+            case '+' :
+                res = a + b;
+                break;
+
+            case '-':
+                res = a - b;
+            
+            case  '*':
+                res = a * b;
+
+            case '/':
+                res = a / b;
+
+            default:
+                System.out.println("Enter Valid Operator");
+                break;
+        }
+        System.out.println("Calculation " + a + op + b + "=" + res);
+    }
+
+    void Even(){
+
+        int a = 4;
+        if(a%2==0){
+            System.out.println("Even");
+        }
+    }
+    public static void main(String[] args) {
+        
+        calculator c = new calculator();
+        c.cal();
+        c.Even();
+    }
+}

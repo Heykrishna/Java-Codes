@@ -1,0 +1,32 @@
+
+
+
+
+/* 
+ *  class Node {
+ *    int data;
+ *    Node left; 
+ *    Node right;
+ *    public Node() {
+ *      data = 0;
+ *    }
+ *    public Node(int d)  {
+ *      data = d;
+ *    }
+ *  }
+ *
+ *  The above class defines a tree node.
+ */
+class Result {
+    // Method to count leaf nodes
+    public static int countLeafs(Node node) {
+        if (node == null) return 0;
+        if (node.left == null && node.right == null) return 1;
+        return countLeafs(node.left) + countLeafs(node.right);
+    }
+    // Method to count non-leaf nodes
+    public static int countNonLeafs(Node node) {
+        if (node == null || (node.left == null && node.right == null)) return 0;
+        return 1 + countNonLeafs(node.left) + countNonLeafs(node.right);
+    }
+}

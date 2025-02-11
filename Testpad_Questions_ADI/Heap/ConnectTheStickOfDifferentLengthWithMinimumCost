@@ -1,0 +1,23 @@
+
+
+class Result
+{
+  static int connectCost(int lengths[], int n){
+    // Write your code here
+    PriorityQueue<Integer>pq=new PriorityQueue<>();
+    for(int i=0;i<n;i++)
+    {
+      pq.add(lengths[i]);
+    }
+    int sum=0;
+    while(pq.size()>1)
+    {
+      int a=pq.poll();
+      int b=pq.poll();
+      int c=a+b;
+      sum+=c;
+      pq.add(c);
+    }
+    return sum;
+  }
+}

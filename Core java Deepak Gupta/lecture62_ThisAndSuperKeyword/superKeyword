@@ -1,0 +1,24 @@
+public class superKeyw {
+
+    int a = 10;
+    int b = 20;
+
+}
+
+class child extends superKeyw {
+
+    int a = 30;
+    int b = 40;
+
+    child(){
+
+        System.out.println(this.a + " " + this.b);
+        System.out.println(super.a + " " + super.b);
+    }
+
+
+    public static void main(String[] args) {
+        
+        child ch = new child();
+    }
+}

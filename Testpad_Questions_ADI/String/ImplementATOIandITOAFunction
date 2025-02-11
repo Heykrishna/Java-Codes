@@ -1,0 +1,11 @@
+
+class Result {
+
+    static String itoa(int num) {
+        return String.valueOf(num);
+    }
+
+    static int atoi(String str) {
+        return Integer.parseInt(str);
+    }
+}

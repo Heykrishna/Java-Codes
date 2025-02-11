@@ -1,0 +1,20 @@
+// stings are immutable, we cannot change its individual characters 
+// string performs poor because of immutability 
+// string do not allow due to security reason
+
+
+
+// if we have to print "heylo" insted of "hello"
+
+import java.util.*;
+
+public class interning {
+    public static void main(String[] args){
+
+        String s = "hello";
+        s = s.substring(0,2) + 'y' + s.substring(3);
+
+        System.out.println(s);
+
+    }
+}

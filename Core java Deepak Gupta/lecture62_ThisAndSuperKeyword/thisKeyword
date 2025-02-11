@@ -1,0 +1,15 @@
+
+public class thisKeywo {
+    
+    int id;
+
+    thisKeywo(int id){
+        this.id = id;
+        System.out.println(id);
+    }
+
+    public static void main(String[] args) {
+        thisKeywo t = new thisKeywo(1);
+    }
+
+}

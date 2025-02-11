@@ -1,0 +1,11 @@
+
+
+class Result {
+  static int arraysEqualorNot(int[] A, int[] B) {
+    // Sort both arrays
+    java.util.Arrays.sort(A);
+    java.util.Arrays.sort(B);
+    // Compare sorted arrays
+    return java.util.Arrays.equals(A, B) ? 1 : 0;
+  }
+}

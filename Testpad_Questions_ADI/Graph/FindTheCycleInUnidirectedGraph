@@ -1,0 +1,55 @@
+import java.util.*;
+
+class Main{
+   public static boolean dfs(int node,int parent,int[] vis, List<List<Integer>> ls){
+        vis[node]=1;
+        for(int neighbour:ls.get(node)){
+            if(vis[neighbour]==0){
+                if(dfs(neighbour,node,vis,ls)==true){
+                    return true;
+                }
+            }
+            else if(neighbour!=parent){
+                    return true;
+                }
+        }
+        return false;
+    }
+    public static boolean isCycle(int v, List<List<Integer>> ls){
+        int[] vis = new int[v];
+        for(int i=0;i<v;i++){
+            if(vis[i]==0){
+                if(dfs(i,-1,vis,ls)==true){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args)
+    {
+
+        Scanner sc = new Scanner(System.in);
+        int v = sc.nextInt();
+        int e = sc.nextInt();
+        List<List<Integer>> ls = new ArrayList<>();
+
+        for(int i=0 ; i<v ; i++){
+            ls.add(new ArrayList<>());
+        }
+
+        for(int i=0;i<e;i++){
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            ls.get(x).add(y);
+            ls.get(y).add(x);
+        }
+        
+        if(isCycle(v,ls)==true){
+            System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+    }
+}

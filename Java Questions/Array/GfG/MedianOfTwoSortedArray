@@ -1,0 +1,54 @@
+Median of two sorted arrays 
+
+arr1 = [1, 3, 5]
+arr2 = [2, 4, 6]
+
+Median = (3 + 4) / 2 = 3.5
+
+
+
+
+
+import java.sql.Array;
+import java.util.*;
+
+public class MedianOfTwoSortedArray {
+
+    public static double findMedian(int[] arr1, int[] arr2){
+
+        int[] merged = new int[arr1.length + arr2.length];
+        System.arraycopy(arr1, 0, merged, 0, arr1.length); 
+        System.arraycopy(arr2, 0, merged, arr1.length, arr2.length);
+
+        Array.sort(merged);
+        int n = merged.length;
+
+        if(n%2 == 0){
+            return (merged)
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int m = sc.nextInt();
+        int[] arr1 = new int[m];
+        
+        for(int i=0; i<m; i++ ){
+            arr1[i] = sc.nextInt();
+        }
+
+        int n = sc.nextInt();
+        int[] arr2 = new int[n];
+        
+        for(int i=0; i<n; i++){
+            arr2[i] = sc.nextInt();
+        }
+
+        double median = findMedian(arr1, arr2);               // Double data type is used to store floating numbers  
+        System.out.println(median);
+
+    }
+}

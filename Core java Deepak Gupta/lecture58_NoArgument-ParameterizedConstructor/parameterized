@@ -1,0 +1,15 @@
+
+
+public class parameterized {
+
+    // paraemetrized constructor
+    public parameterized(int a, int b) {
+        System.out.println("The sum is " + (a + b));
+    }
+    
+
+    public static void main(String[] args) {
+        
+        parameterized p = new parameterized(20, 10);
+    }
+}

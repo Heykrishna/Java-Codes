@@ -1,0 +1,31 @@
+
+
+class Result {
+  static int getPairsCount(int arr[], int n, int k) {
+    int count = 0;
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+
+    for (int i = 0; i < n; i++) {
+      max = Math.max(max, arr[i]);
+      min = Math.min(min, arr[i]);
+    }
+    int offset = -min; 
+    int[] freq = new int[max + offset + 1];
+
+    for (int i = 0; i < n; i++) {
+      freq[arr[i] + offset]++;
+    }
+
+    for (int i = 0; i < freq.length; i++) {
+      if (i + k < freq.length && freq[i] > 0 && freq[i + k] > 0) {
+        count += freq[i] * freq[i + k];
+      }
+    }
+    // If K is 0, each pair is counted twice, so divide by 2
+    if (k == 0) {
+      count /= 2;
+    }
+    return count;
+  }
+}

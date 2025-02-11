@@ -1,0 +1,36 @@
+
+
+
+
+import java.util.*;
+
+class Solve {
+    /**
+     * Return all the permutations of the given string in any order,
+     * as they will be sorted at the back-end before printing.
+     */
+    ArrayList<String> permute(String str) {
+        ArrayList<String> result = new ArrayList<>();
+        permute(str.toCharArray(), 0, str.length() - 1, result);
+        Collections.sort(result); // Sort permutations in lexicographical order
+        return result;
+    }
+
+    private void permute(char[] chars, int l, int r, ArrayList<String> result) {
+        if (l == r) {
+            result.add(new String(chars));
+        } else {
+            for (int i = l; i <= r; i++) {
+                swap(chars, l, i);
+                permute(chars, l + 1, r, result);
+                swap(chars, l, i); // Backtrack
+            }
+        }
+    }
+
+    private void swap(char[] chars, int i, int j) {
+        char temp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = temp;
+    }
+}

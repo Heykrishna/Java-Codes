@@ -1,0 +1,35 @@
+class Result {
+  static int countIslands(int mat[][], int m, int n){
+
+    boolean[][] visited = new boolean[m][n];
+
+    int islandCount = 0;
+
+    for (int i = 0; i < m; i++) {
+      for (int j = 0; j < n; j++) {
+
+        if (mat[i][j] == 1 && !visited[i][j]) {
+
+            islandCount++;
+
+            dfs(mat, i, j, visited);
+        }
+      }
+    }
+
+    return islandCount;
+  }   
+  static void dfs(int mat[][], int i, int j, boolean[][] visited) {
+    // Check boundaries
+    if (i < 0 || i >= mat.length || j < 0 || j >= mat[0].length || mat[i][j] == 0 || visited[i][j]) {
+      return;
+    }
+
+    visited[i][j] = true;
+    // Perform DFS on adjacent cells
+    dfs(mat, i - 1, j, visited); // Top
+    dfs(mat, i + 1, j, visited); // Bottom
+    dfs(mat, i, j - 1, visited); // Left
+    dfs(mat, i, j + 1, visited); // Right
+  }
+}

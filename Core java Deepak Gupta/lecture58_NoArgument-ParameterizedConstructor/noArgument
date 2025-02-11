@@ -1,0 +1,17 @@
+
+public class noArgument {
+
+    // no argument constructor
+    public noArgument() {
+        System.out.println("Constructor is called");
+    }
+    
+    
+
+    public static void main(String[] args) {
+        
+        noArgument a = new noArgument();   // object 
+
+
+    }
+}
