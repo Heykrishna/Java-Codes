@@ -12,12 +12,9 @@ public class basicSyntax {
         
         System.out.println(arr[0] + " ");
         
+        // update 
         arr[0] = 99;
         System.out.println(arr[0] + " ");
-
-
-
-
 
     }
 }
