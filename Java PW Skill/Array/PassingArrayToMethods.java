@@ -10,9 +10,6 @@ public class PassingArrayToMethods {
         System.out.println(change);
     }
 
-
-    
-
     public static void change(int x) {
         x = 10;
     }
