@@ -6,8 +6,8 @@ public class PassingArrayToMethods {
         int x = 5;
         System.out.println(x);
 
-        change(x);
-        System.out.println(change);
+        // change(x);
+        // System.out.println(change);
     }
 
     public static void change(int x) {
