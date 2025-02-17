@@ -1,8 +1,8 @@
 
-
 import java.util.*;
 
 public class RevTheArr {
+
     public static void reverseArray(int[] arr) {
         int left = 0;
         int right = arr.length - 1;
@@ -25,9 +25,7 @@ public class RevTheArr {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        
+
         reverseArray(arr);
     }
 }
-
-
