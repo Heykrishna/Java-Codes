@@ -9,3 +9,21 @@ class Result {
     return (str1 + str1).contains(str2) ? 1 : 0; // YES if str2 is substring of str1 + str1
   }
 }
+
+
+import java.util.*;
+
+public class CheckIfStringsAreRotationOrNot {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read input strings
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        
+        // Call the method and print result
+        System.out.println(Result.isRotation(str1, str2));
+        
+        sc.close();
+    }
+}

@@ -9,3 +9,24 @@ class Result {
         return Integer.parseInt(str);
     }
 }
+
+
+import java.util.*;
+
+public class ImplementATOIandITOAFunction {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read input string for atoi
+        String str = sc.nextLine();
+        
+        // Read input integer for itoa
+        int num = sc.nextInt();
+        
+        // Call methods and print results
+        System.out.println(Result.atoi(str));
+        System.out.println(Result.itoa(num));
+        
+        sc.close();
+    }
+}
