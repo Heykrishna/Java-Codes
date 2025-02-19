@@ -14,3 +14,27 @@ class Result {
       return sb.toString();
   }
 }
+
+
+import java.util.*;
+
+public class TechnicalIssueOfKeyboard {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read input string
+        String str = sc.nextLine();
+        
+        // Call the method and print result
+        System.out.println(Result.getDesiredString(str));
+        
+        sc.close();
+    }
+}
+
+
+
+
+
+
+

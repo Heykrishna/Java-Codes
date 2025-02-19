@@ -15,3 +15,22 @@ class Result {
         return false;
     }
 }
+
+
+import java.util.*;
+
+public class StringIsSubseQuenceOrNot {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read input strings
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        
+        // Call the method and print result
+        System.out.println(Result.strSubsequence(str1, str2));
+        
+        sc.close();
+    }
+}
+

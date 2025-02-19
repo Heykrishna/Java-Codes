@@ -34,3 +34,17 @@ class Result {
       return "";
     }
   }
+
+
+
+
+  public class SpellTheNumber {
+    public static void main(String[] args) {
+      Result.intToWord(1234); // prints: one thousand two hundred thirty four
+      Result.intToWord(100000); // prints: one lakhs
+      Result.intToWord(0); // prints: zero
+      Result.intToWord(19); // prints: nineteen
+      Result.intToWord(55); // prints: fifty five
+      Result.intToWord(845); // prints: eight hundred forty five
+    }
+  }
