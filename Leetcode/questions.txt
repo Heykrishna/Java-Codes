@@ -41,3 +41,8 @@ int singleNumber(int[] nums) {
     }
     return single;
 }
+
+////////////////////////////////////////////////////////////////////
+
+
+Arrays.sort(arr);    
