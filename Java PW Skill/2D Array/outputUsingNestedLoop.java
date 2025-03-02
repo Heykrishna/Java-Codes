@@ -6,7 +6,7 @@ public class outputUsingNestedLoop {
 
         Scanner sc = new Scanner(System.in);
         
-        int[][] arr = new int[2][5];
+        int[][] arr = new int[2][3];
 
         // arr[0][0] = 9;
 
@@ -26,5 +26,15 @@ public class outputUsingNestedLoop {
             }
             System.out.println();
         }
+
+
+        int m = arr.length;
+        int n = arr[0].length;
+
+        System.out.println(m); // arr.lenght gives no of rows, lines 
+        System.out.println(n);  // retutns column
+
+
+
     }
 }
